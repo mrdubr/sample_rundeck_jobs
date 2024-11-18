@@ -1,4 +1,25 @@
 
+# Revision 2
+
+## Job Description
+This Rundeck job named "Call GET {host}" is designed to perform an HTTP GET request to a specified host, indicated by the required option 'host' passed as a parameter. The command utilizes an HTTP Workflow Step Plugin to execute the GET method on the remote URL, which is defined as `${option.host}`. The job does not require authentication, does not validate the response code, and has SSL verification enabled with a timeout set to 30 seconds.
+
+## Recommended Improvements
+1. **Enable Authentication**: Introduce configurable authentication methods (e.g., Basic, Bearer Token) to secure the HTTP requests, ensuring that the API endpoint is accessed by authorized users only.
+   
+2. **Response Code Checking**: Set the `checkResponseCode` option to true to validate the responses from the remote host. This will allow the job to handle errors effectively and enable better error reporting or conditional execution based on response status.
+
+3. **Response Logging**: Consider enabling logging options like `printResponse` or writing responses to a file. This can aid in troubleshooting and provide insights into the results of the GET requests, especially if responses vary or if errors occur.
+
+## Changes from previous revision (revision 1)
+The changes between the original and updated Rundeck job definitions are as follows:
+
+1. **Job Name Change**:
+   - **Original Name**: `HTTP GET {host}`
+   - **Updated Name**: `Call GET {host}`
+   
+This change suggests a slight rephrasing of the job's purpose, potentially making it clearer that the job is intended to call a GET request to the specified host. No other modifications to job parameters, configurations, or structure were identified between the two definitions.
+
 # Revision 1
 
 ## Job Description
